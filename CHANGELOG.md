@@ -7,18 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.1.0] - 2020-04-29
-###  Added
-- `checkout-instore-custom.css` and `checkout-instore-custom.js` to template.
-
-## [0.0.3] - 2020-04-01
-### Fixed
-- Folder name in `README.md` from `checkout-custom` to `checkout-ui-custom`.
-
-## [0.0.2] - 2020-03-23
-
-### Changed
-- Use default settings for template.
-
 ### Added
-- Initial version of the project created.
+
+- ✨ add the base vite configuration with preact for the project
+- ✨ add the base vite configuration for generate the build files in the folder `checkout-ui-custom`

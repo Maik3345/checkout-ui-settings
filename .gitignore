@@ -28,6 +28,7 @@ build/Release
 
 # Dependency directories
 node_modules
+preact/node_modules
 jspm_packages
 
 # Optional npm cache directory
