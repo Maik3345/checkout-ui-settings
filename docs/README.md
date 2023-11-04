@@ -1,7 +1,5 @@
 # Checkout UI Settings - With Vite, Preact and Typescript
 
-# Checkout UI Settings - With Vite, Preact and Typescript
-
 This is a project created with Vite, Preact, and Typescript, designed for creating custom checkout code for your store. It can be used in conjunction with the 'checkout-ui-settings' app, which links the changes made in this project to your workspace.
 
 ## Project Configuration
