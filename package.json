@@ -4,7 +4,8 @@
     "postinstall": "npx husky install",
     "dev": "cd preact && npm run dev",
     "build": "cd preact && npm run build",
-    "build:watch": "cd preact && npm run build:watch"
+    "build:watch": "cd preact && npm run build:watch",
+    "prepare": "cd preact && yarn install"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",

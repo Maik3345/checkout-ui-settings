@@ -1,9 +1,11 @@
-import { render } from 'preact'
-import App from './components/App'
-import './index.css'
+import { InitCart } from '@/modules';
+import './styles/index.css';
+import { getOrderForm } from '@/shared';
 
-setTimeout(() => {
-  const container = document.getElementById('cart-choose-products')
-
-  render(<App />, container!)
-}, 3000)
+try {
+  getOrderForm(() => {
+    InitCart();
+  });
+} catch (error) {
+  console.error('Error initializing modules: ', error);
+}
