@@ -12,6 +12,7 @@
     "lint": "eslint ./src --ext .ts,.tsx,.js,.jsx"
   },
   "dependencies": {
+    "jotai": "^2.5.1",
     "preact": "^10.16.0"
   },
   "devDependencies": {

@@ -5,11 +5,11 @@
     "dev": "cd preact && npm run dev",
     "build": "cd preact && npm run build",
     "build:watch": "cd preact && npm run build:watch",
-    "prepare": "cd preact && yarn install"
+    "prepare": "npx husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.2.0",
-    "@commitlint/config-conventional": "^18.1.0",
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.3",
     "husky": "^8.0.3"
   }
 }
