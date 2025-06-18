@@ -1,5 +1,4 @@
 import { afterEach, vi } from 'vitest';
-import '@testing-library/jest-dom';
 
 // Mock del objeto global
 window.requestAnimationFrame = (callback: FrameRequestCallback): number => {
