@@ -12,16 +12,18 @@ export default defineConfig({
   build: {
     outDir: '../checkout-ui-custom',
     assetsDir: '',
+    sourcemap: true,
     rollupOptions: {
       input: 'src/main.tsx',
       output: {
-        sourcemap: true,
-        format: 'iife', // Formato IIFE
-        name: 'myApp', // Nombre de la función autoejecutable
+        format: 'iife',
+        name: 'myApp',
         entryFileNames: 'checkout6-custom.js',
         chunkFileNames: 'chunks/[name]-custom.js',
         assetFileNames: 'checkout6-custom.css',
       },
     },
+    // Added target configuration for Vite 6
+    target: 'es2015',
   },
 });

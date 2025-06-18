@@ -13,18 +13,18 @@
     "prepare": "npx husky"
   },
   "dependencies": {
-    "jotai": "^2.5.1",
+    "jotai": "^2.12.5",
     "preact": "^10.16.0"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.5.0",
-    "@testing-library/preact": "^3.2.3",
-    "@types/jquery": "^3.5.25",
+    "@preact/preset-vite": "^2.10.1",
+    "@testing-library/preact": "^3.2.4",
+    "@types/jquery": "^3.5.32",
     "happy-dom": "^18.0.1",
-    "prettier": "^3.0.3",
+    "prettier": "^3.5.3",
     "react": "^19.1.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.8",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
     "vitest": "^3.2.4"
   },
   "engines": {
