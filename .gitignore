@@ -58,3 +58,4 @@ dist
 
 # Lock files
 package-lock.json
+preact/package-lock.json
