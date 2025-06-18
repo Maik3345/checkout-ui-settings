@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { MutationObserverManager } from '.';
 
 describe('MutationObserverManager', () => {
@@ -15,21 +16,21 @@ describe('MutationObserverManager', () => {
     document.body.removeChild(target);
   });
 
-  it('should call the callback when a new node is added to the target element', () => {
-    const callback = jest.fn();
-    const stopObserving = jest.fn();
+  it('should call the callback when a new node is added to the target element', async () => {
+    const callback = vi.fn();
     observer = new MutationObserverManager(target, { childList: true }, callback);
 
     const newNode = document.createElement('div');
     target.appendChild(newNode);
 
-    setTimeout(() => {
-      expect(callback).toHaveBeenCalledWith(newNode, stopObserving);
-    }, 300);
+    // MutationObserver callbacks are asynchronous in the browser
+    await new Promise(resolve => setTimeout(resolve, 0));
+
+    expect(callback).toHaveBeenCalledWith(newNode, expect.any(Function));
   });
 
   it('should not call the callback when a new node is added to a different element', () => {
-    const callback = jest.fn();
+    const callback = vi.fn();
     observer = new MutationObserverManager(target, { childList: true }, callback);
 
     const newNode = document.createElement('div');
@@ -39,7 +40,7 @@ describe('MutationObserverManager', () => {
   });
 
   it('should not call the callback when a new attribute is added to the target element', () => {
-    const callback = jest.fn();
+    const callback = vi.fn();
     observer = new MutationObserverManager(target, { attributes: true }, callback);
 
     target.setAttribute('data-test', 'value');

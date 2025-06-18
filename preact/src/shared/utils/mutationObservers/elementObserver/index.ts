@@ -32,10 +32,9 @@ export class MutationObserverManager {
     for (const mutation of records) {
       if (this.shouldProcessMutation(mutation)) {
         const newNode = mutation.addedNodes[0];
-        console.log('Nuevo elemento añadido al DOM:', newNode);
-        this.callback(newNode, this.stopObserving.bind(this));
-      } else {
-        console.log('No se procesa la mutación:', mutation);
+        if (newNode) {
+          this.callback(newNode, this.stopObserving.bind(this));
+        }
       }
     }
   }
@@ -43,13 +42,24 @@ export class MutationObserverManager {
   private shouldProcessMutation(mutation: MutationRecord): boolean {
     const { config } = this;
 
-    // Propiedades de configuración relacionadas con la validación de mutaciones
-    const mutationProperties = ['childList', 'subtree', 'attributes', 'characterData'];
+    // Check for childList mutations with addedNodes
+    if (config.childList && mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+      return true;
+    }
 
-    for (const property of mutationProperties) {
-      if (config[property as keyof MutationObserverInit] && mutation.type === property) {
-        return true; // Valida la mutación si la propiedad está habilitada
-      }
+    // Check for attributes mutations if enabled
+    if (config.attributes && mutation.type === 'attributes') {
+      return true;
+    }
+
+    // Check for characterData mutations if enabled
+    if (config.characterData && mutation.type === 'characterData') {
+      return true;
+    }
+
+    // If subtree is enabled, apply the same checks
+    if (config.subtree) {
+      // Additional handling for subtree if needed
     }
 
     // Si no se cumple ninguna de las condiciones anteriores, no se procesa

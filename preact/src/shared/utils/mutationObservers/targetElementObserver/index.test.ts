@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TargetElementObserver } from '../targetElementObserver';
 
 describe('TargetElementObserver', () => {
@@ -13,13 +14,11 @@ describe('TargetElementObserver', () => {
     document.body.removeChild(target);
   });
 
-  it('should call the onLoadCallback when the target element is found', (done) => {
-    const onLoadCallback = jest.fn();
+  it('should call the onLoadCallback when the target element is found', async () => {
+    const onLoadCallback = vi.fn();
     new TargetElementObserver(target, onLoadCallback);
-
-    setTimeout(() => {
-      expect(onLoadCallback).toHaveBeenCalled();
-      done();
-    }, 300);
+    
+    // En Vitest, podemos usar await flushPromises() o simplemente verificar directamente
+    expect(onLoadCallback).toHaveBeenCalled();
   });
 });
