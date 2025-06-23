@@ -7,7 +7,8 @@
     "dev": "cd preact && npm run dev",
     "build": "cd preact && npm run build",
     "build:watch": "cd preact && npm run build:watch",
-    "prepare": "npx husky && cd preact && yarn"
+    "prepare": "npx husky && cd preact && yarn",
+    "test:cov": "cd preact && npm run test:cov"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
