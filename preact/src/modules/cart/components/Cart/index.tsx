@@ -9,7 +9,6 @@ const CART_CONTAINER = 'cart-container-custom';
 export const CartContainer = () => {
   const [text, setText] = useAtom(textAtom);
   const [uppercase] = useAtom(uppercaseAtom);
-  console.log('I am the cart container');
 
   const handleChange = (e: any) => setText(e.target.value);
 
@@ -29,10 +28,8 @@ export const CartContainer = () => {
 };
 
 export const renderCartContainer = () => {
-  if ($(`#${CART_CONTAINER}`).length) {
-    console.log('Already rendered the cart');
-    return;
-  }
+  if ($(`#${CART_CONTAINER}`).length) return;
+
   let container = $('.cart-template.full-cart .cart-template-holder');
   const div = document.createElement('div');
   div.setAttribute('id', CART_CONTAINER);
