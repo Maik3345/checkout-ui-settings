@@ -1,5 +1,3 @@
-
-
 /**
  * Retrieves the VTEX OrderForm object by checking for its availability in the global window object.
  *

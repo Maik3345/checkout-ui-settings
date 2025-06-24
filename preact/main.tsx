@@ -1,13 +1,12 @@
 // Import necessary functions and types
-import { getOrderForm, render } from '@/shared';
-import type { VtexOrderForm } from './src/typings/order-form';
+import { getOrderForm, render } from "@/shared";
 
 // Import global CSS styles
-import './styles/index.css';
-import './styles/reset.css';
+import "./styles/index.css";
+import "./styles/reset.css";
 
 // Define global application name
-export const APP_NAME = 'VTEX Checkout UI Customization';
+export const APP_NAME = "VTEX Checkout UI Customization";
 
 // Log welcome message to console
 console.log(`Yay! You are using the ${APP_NAME}!!`);
