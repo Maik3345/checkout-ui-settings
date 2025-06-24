@@ -8,10 +8,10 @@ window.requestAnimationFrame = (callback: FrameRequestCallback): number => {
 
 // Para los tests que usan setTimeout
 vi.mock('global', () => ({
-  setTimeout: (callback: Function) => {
+  setTimeout: (callback: () => void) => {
     callback();
     return 0;
-  }
+  },
 }));
 
 // Limpiar mocks después de cada prueba

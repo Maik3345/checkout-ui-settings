@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { getOrderForm } from './index';
 
 declare global {
@@ -32,11 +32,11 @@ describe('getOrderForm', () => {
 
     expect(result).toBeUndefined();
     expect(mockCallback).not.toHaveBeenCalled(); // No se llama inmediatamente
-    
+
     // Avanzamos el temporizador para verificar que se llama después de 3 segundos (30 intentos * 100ms)
     vi.advanceTimersByTime(3100);
     expect(mockCallback).toHaveBeenCalled();
-    
+
     vi.useRealTimers();
   });
 
@@ -49,13 +49,13 @@ describe('getOrderForm', () => {
 
     expect(result).toBeUndefined();
     expect(mockCallback).not.toHaveBeenCalled(); // No se llama inmediatamente
-    
+
     // Avanzar el primer tick del intervalo
     vi.advanceTimersByTime(100);
-    
+
     // Ahora debería haberse llamado el callback
     expect(mockCallback).toHaveBeenCalled();
-    
+
     vi.useRealTimers();
   });
 
@@ -65,16 +65,16 @@ describe('getOrderForm', () => {
     window.vtexjs = { checkout: {} };
 
     const result = getOrderForm(mockCallback);
-    
+
     expect(result).toBeUndefined();
     expect(mockCallback).not.toHaveBeenCalled(); // No se llama inmediatamente
-    
+
     // Avanzamos el tiempo suficiente para que se ejecuten todos los intentos
     vi.advanceTimersByTime(3100); // 31 * 100ms
-    
+
     // Ahora debería haberse llamado el callback
     expect(mockCallback).toHaveBeenCalled();
-    
+
     vi.useRealTimers();
   });
 });

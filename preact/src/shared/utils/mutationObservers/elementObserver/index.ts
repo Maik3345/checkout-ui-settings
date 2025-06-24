@@ -7,7 +7,7 @@ export class MutationObserverManager {
   constructor(
     target: Node,
     config: MutationObserverInit,
-    callback: (newNode: Node, stopObserving: () => void) => void,
+    callback: (newNode: Node, stopObserving: () => void) => void
   ) {
     this.config = config;
     this.target = target;

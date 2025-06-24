@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MutationObserverManager } from '.';
 
 describe('MutationObserverManager', () => {
@@ -24,7 +24,7 @@ describe('MutationObserverManager', () => {
     target.appendChild(newNode);
 
     // MutationObserver callbacks are asynchronous in the browser
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     expect(callback).toHaveBeenCalledWith(newNode, expect.any(Function));
   });
