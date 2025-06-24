@@ -14,7 +14,7 @@ export default defineConfig({
     assetsDir: '',
     sourcemap: true,
     rollupOptions: {
-      input: 'src/main.tsx',
+      input: 'main.tsx',
       output: {
         format: 'iife',
         name: 'myApp',
