@@ -1,14 +1,21 @@
 {
-  "name": "checkout-ui-settings",
+  "name": "checkout-ui-settings-preact",
+  "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
-    "postinstall": "npx husky install",
-    "dev": "cd preact && npm run dev",
     "build": "cd preact && npm run build",
-    "build:watch": "cd preact && npm run build:watch"
+    "build:watch": "cd preact && npm run build:watch",
+    "prepare": "npx husky && cd preact && yarn",
+    "test:cov": "cd preact && npm run test:cov",
+    "format": "cd preact && npm run format"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.2.0",
-    "@commitlint/config-conventional": "^18.1.0",
-    "husky": "^8.0.3"
+    "@biomejs/biome": "^2.0.5",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
