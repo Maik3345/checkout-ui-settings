@@ -1,6 +1,6 @@
 // Import necessary functions and types
 import { getOrderForm, render } from '@/shared';
-import type { VtexOrderForm } from './typings/order-form';
+import type { VtexOrderForm } from './src/typings/order-form';
 
 // Import global CSS styles
 import './styles/index.css';

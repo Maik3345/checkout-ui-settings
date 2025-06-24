@@ -11,6 +11,9 @@ declare global {
   }
 
   const $: JQueryStatic;
+
+  // Exportando el tipo VtexOrderForm como global
+  type VtexOrderForm = import('./order-form').VtexOrderForm;
 }
 
 // Definición para CSS Modules

@@ -1,7 +1,6 @@
 import { useAtom } from 'jotai';
 import { useEffect } from 'preact/hooks';
 import { defaultRoutesConfig, orderFormAtom, useRouter } from '@/shared';
-import type { VtexOrderForm } from '@/typings/order-form';
 
 // Componente principal que inicializa el sistema
 export const Render = ({ orderForm }: { orderForm: VtexOrderForm | null }) => {

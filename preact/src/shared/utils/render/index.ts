@@ -1,6 +1,5 @@
 import { h } from 'preact';
 import { Render } from '@/components';
-import type { VtexOrderForm } from '@/typings/order-form';
 
 export const render = (orderForm: VtexOrderForm | undefined) => {
   // Renderizamos nuestro componente raíz que se encarga de gestionar las rutas
