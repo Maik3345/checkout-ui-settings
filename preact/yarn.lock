@@ -191,6 +191,25 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-1.0.2.tgz"
   integrity sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==
 
+"@biomejs/biome@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-2.0.5.tgz"
+  integrity sha512-MztFGhE6cVjf3QmomWu83GpTFyWY8KIcskgRf2AqVEMSH4qI4rNdBLdpAQ11TNK9pUfLGz3IIOC1ZYwgBePtig==
+  optionalDependencies:
+    "@biomejs/cli-darwin-arm64" "2.0.5"
+    "@biomejs/cli-darwin-x64" "2.0.5"
+    "@biomejs/cli-linux-arm64" "2.0.5"
+    "@biomejs/cli-linux-arm64-musl" "2.0.5"
+    "@biomejs/cli-linux-x64" "2.0.5"
+    "@biomejs/cli-linux-x64-musl" "2.0.5"
+    "@biomejs/cli-win32-arm64" "2.0.5"
+    "@biomejs/cli-win32-x64" "2.0.5"
+
+"@biomejs/cli-darwin-arm64@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-2.0.5.tgz"
+  integrity sha512-VIIWQv9Rcj9XresjCf3isBFfWjFStsdGZvm8SmwJzKs/22YQj167ge7DkxuaaZbNf2kmYif0AcjAKvtNedEoEw==
+
 "@esbuild/darwin-arm64@0.25.5":
   version "0.25.5"
   resolved "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.25.5.tgz"
@@ -1421,11 +1440,6 @@ preact@^10.0.0, preact@^10.16.0, preact@^10.4.0, "preact@>=10 || ^10.0.0-alpha.0
   version "10.26.9"
   resolved "https://registry.npmjs.org/preact/-/preact-10.26.9.tgz"
   integrity sha512-SSjF9vcnF27mJK1XyFMNJzFd5u3pQiATFqoaDy03XuN00u4ziveVVEGt5RKJrDR8MHE/wJo9Nnad56RLzS2RMA==
-
-prettier@^3.5.3:
-  version "3.5.3"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-3.5.3.tgz"
-  integrity sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==
 
 pretty-format@^27.0.2:
   version "27.5.1"

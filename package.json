@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "postinstall": "npx husky install",
-    "dev": "cd preact && npm run dev",
     "build": "cd preact && npm run build",
     "build:watch": "cd preact && npm run build:watch",
     "prepare": "npx husky && cd preact && yarn",
-    "test:cov": "cd preact && npm run test:cov"
+    "test:cov": "cd preact && npm run test:cov",
+    "format": "cd preact && npm run format"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.0.5",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "husky": "^9.1.7"

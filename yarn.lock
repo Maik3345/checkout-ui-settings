@@ -16,6 +16,25 @@
   resolved "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.27.1.tgz"
   integrity sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow==
 
+"@biomejs/biome@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-2.0.5.tgz"
+  integrity sha512-MztFGhE6cVjf3QmomWu83GpTFyWY8KIcskgRf2AqVEMSH4qI4rNdBLdpAQ11TNK9pUfLGz3IIOC1ZYwgBePtig==
+  optionalDependencies:
+    "@biomejs/cli-darwin-arm64" "2.0.5"
+    "@biomejs/cli-darwin-x64" "2.0.5"
+    "@biomejs/cli-linux-arm64" "2.0.5"
+    "@biomejs/cli-linux-arm64-musl" "2.0.5"
+    "@biomejs/cli-linux-x64" "2.0.5"
+    "@biomejs/cli-linux-x64-musl" "2.0.5"
+    "@biomejs/cli-win32-arm64" "2.0.5"
+    "@biomejs/cli-win32-x64" "2.0.5"
+
+"@biomejs/cli-darwin-arm64@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-2.0.5.tgz"
+  integrity sha512-VIIWQv9Rcj9XresjCf3isBFfWjFStsdGZvm8SmwJzKs/22YQj167ge7DkxuaaZbNf2kmYif0AcjAKvtNedEoEw==
+
 "@commitlint/cli@^19.8.1":
   version "19.8.1"
   resolved "https://registry.npmjs.org/@commitlint/cli/-/cli-19.8.1.tgz"
