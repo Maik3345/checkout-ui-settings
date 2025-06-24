@@ -1,4 +1,4 @@
 export * from './mutationObservers';
-export * from './render';
+export * from './initializeApp';
 export * from './routing';
 export * from './vtex';

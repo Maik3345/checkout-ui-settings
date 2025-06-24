@@ -1,5 +1,5 @@
 // Import necessary functions and types
-import { getOrderForm, render } from "@/shared";
+import { getOrderForm, initializeApp } from "@/shared";
 
 // Import global CSS styles
 import pkg from "../package.json";
@@ -19,7 +19,7 @@ console.log(`🎉 Yay! You are using the ${APP_NAME} version ${APP_VERSION}!!`);
 try {
   // Fetch the order form and render the application
   // when the data is available
-  getOrderForm((orderForm: VtexOrderForm | undefined) => render(orderForm));
+  getOrderForm((orderForm: VtexOrderForm | undefined) => initializeApp(orderForm));
 } catch (error) {
   // Handle any errors that occur during initialization
   console.error(
