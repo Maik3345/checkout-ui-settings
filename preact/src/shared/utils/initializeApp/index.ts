@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { Render } from '@/components';
+import { CheckoutApp } from '@/components';
 
 /**
  * Initializes the application by creating a container element and rendering the root component
@@ -13,16 +13,16 @@ import { Render } from '@/components';
  * 4. Asynchronously imports the render function from Preact to avoid loading issues
  * 5. Renders the Render component with the provided orderForm (or null if not provided)
  */
-export const initializeApp = (orderForm: VtexOrderForm | undefined) => {
+export const initializeApp = (orderForm: VtexOrderForm | undefined, appName: string) => {
   // Render our root component that handles routes
   const appContainer = document.createElement('div');
-  appContainer.setAttribute('id', 'checkout-ui-custom-app');
+  appContainer.setAttribute('id', `${appName}-app-container`);
   document.body.appendChild(appContainer);
 
   // Import render asynchronously to avoid loading issues
   import('preact').then(({ render }) => {
     render(
-      h(Render, {
+      h(CheckoutApp, {
         orderForm: orderForm || null, // Pass the orderForm to the component
       }),
       appContainer

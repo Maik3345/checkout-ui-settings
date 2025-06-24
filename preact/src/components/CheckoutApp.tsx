@@ -1,13 +1,14 @@
 import { useAtom } from 'jotai';
 import { useEffect } from 'preact/hooks';
-import { defaultRoutesConfig, orderFormAtom, useRouter } from '@/shared';
+import { routesConfiguration } from '@/routes';
+import { orderFormAtom, useRouter } from '@/shared';
 
 // Componente principal que inicializa el sistema
-export const Render = ({ orderForm }: { orderForm: VtexOrderForm | null }) => {
+export const CheckoutApp = ({ orderForm }: { orderForm: VtexOrderForm | null }) => {
   const [, setOrderForm] = useAtom(orderFormAtom);
 
   // Inicializamos el router con la configuración por defecto
-  useRouter(defaultRoutesConfig);
+  useRouter(routesConfiguration);
 
   const updateOrderForm = (newOrderForm: VtexOrderForm) => {
     setOrderForm(newOrderForm);

@@ -1,26 +1,45 @@
 import type { ComponentType } from 'preact';
 
-// Definición para elementos que contienen un selector y componentes
+// Definition for elements that contain a selector and components
 export interface RouteElement {
-  selector: string; // Selector CSS para encontrar el elemento en el DOM
+  selector: string; // CSS selector to find the element in the DOM
   components: ComponentType<any>[];
 }
 
-// Definición de Routes que utiliza directamente componentes con múltiples elementos
+// Definition of Routes that directly use components with multiple elements
 export interface RouteComponentConfig {
   elements: RouteElement[];
 }
 
-// Mapeo de rutas de VTEX IO
+// Mapping of VTEX IO routes
 export type VtexRoute = 'cart' | 'shipping' | 'payment' | 'email' | 'profile';
 
-// Objeto de rutas donde las claves son los nombres de las rutas
+// Routes object where keys are route names
 export interface RoutesMap {
   [key: string]: RouteComponentConfig;
 }
 
 export interface RoutesComponentConfig {
-  basePaths?: { [key in VtexRoute]?: string }; // Mapeo opcional de nombres de rutas a paths completos
-  routes: RoutesMap;
-  defaultElements?: RouteElement[]; // Elementos que se renderizan en todas las rutas
+  cart?: RouteComponentConfig;
+  shipping?: RouteComponentConfig;
+  payment?: RouteComponentConfig;
+  email?: RouteComponentConfig;
+  profile?: RouteComponentConfig;
+  genericElements?: RouteElement[]; // Elements that render on all routes
+}
+
+// Definition of a route with a path and name, extending RouteComponentConfig
+export interface Route extends RouteComponentConfig {
+  path: string;
+  name: string;
+}
+
+// Configuration for routes, including optional base paths and default elements
+export interface RoutesConfig {
+  cart?: RouteComponentConfig;
+  shipping?: RouteComponentConfig;
+  payment?: RouteComponentConfig;
+  email?: RouteComponentConfig;
+  profile?: RouteComponentConfig;
+  defaultElements?: RouteElement[];
 }

@@ -1,17 +1,8 @@
 import { h } from 'preact';
 import { MutationObserverManager } from '@/shared';
-import type { RouteComponentConfig, RouteElement, RoutesMap, VtexRoute } from '@/shared/models';
+import type { Route, RouteElement, RoutesConfig, VtexRoute } from '@/shared/models';
 
 // Extendiendo RouteComponentConfig para incluir path para uso interno
-export interface Route extends RouteComponentConfig {
-  path: string;
-  name: string;
-}
-
-export interface RoutesConfig {
-  routes: RoutesMap;
-  defaultElements?: RouteElement[];
-}
 
 // Mapeo por defecto de rutas VTEX a paths
 export const DEFAULT_ROUTE_PATHS: { [key in VtexRoute]: string } = {
@@ -205,18 +196,21 @@ export const initRouter = (
     const currentPath = window.location.pathname + window.location.hash;
 
     // Determinar qué ruta está activa basada en el path actual
-    const routeEntries = Object.entries(config.routes);
+    const vtexRoutes: VtexRoute[] = ['cart', 'shipping', 'payment', 'email', 'profile'];
     const basePaths = DEFAULT_ROUTE_PATHS;
 
     // Buscamos la ruta que coincide con el path actual
     let matchedRoute: Route | null = null;
 
-    for (const [routeName, routeConfig] of routeEntries) {
-      // Si el nombre es una ruta VTEX conocida, usamos el mapeo de paths
-      const isVtexRoute = routeName in DEFAULT_ROUTE_PATHS;
-      const routePath = isVtexRoute
-        ? basePaths[routeName as VtexRoute] || DEFAULT_ROUTE_PATHS[routeName as VtexRoute]
-        : routeName;
+    for (const routeName of vtexRoutes) {
+      const routeConfig = config[routeName];
+
+      if (!routeConfig) {
+        continue;
+      }
+
+      // Usamos el mapeo de paths para rutas VTEX
+      const routePath = basePaths[routeName];
 
       if (routePath && currentPath.includes(routePath)) {
         matchedRoute = {
