@@ -223,12 +223,12 @@ export const initRouter = (
     }
 
     // Cargamos elementos por defecto si existen
-    if (config.defaultElements && config.defaultElements.length > 0) {
+    if (config.genericElements && config.genericElements.length > 0) {
       // Creamos una ruta temporal para los elementos por defecto
       const defaultRoute: Route = {
         path: 'default',
         name: 'default',
-        elements: config.defaultElements,
+        elements: config.genericElements,
       };
       loadComponents(defaultRoute);
     }

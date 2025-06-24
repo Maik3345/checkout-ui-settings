@@ -6,9 +6,9 @@ import {
   ShippingComponent,
   SummaryComponent,
 } from '@/components';
-import type { RoutesComponentConfig } from '@/shared/models';
+import type { RoutesConfig } from '@/shared/models';
 
-export const routesConfiguration: RoutesComponentConfig = {
+export const routesConfiguration: RoutesConfig = {
   cart: {
     elements: [
       {

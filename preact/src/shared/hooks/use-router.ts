@@ -7,7 +7,6 @@ import {
   DEFAULT_ROUTE_PATHS,
   initRouter,
   navigateTo,
-  type RoutesComponentConfig,
   type RoutesConfig,
   routesConfigAtom,
   type VtexRoute,
@@ -29,7 +28,7 @@ export const isVtexRoute = (routeName: string): routeName is VtexRoute => {
  * @param routesConfig - Configuración de rutas
  * @returns Path convertido
  */
-export const getPathFromRouteNameOrPath = (pathOrRouteName: string, routesConfig: RoutesComponentConfig): string => {
+export const getPathFromRouteNameOrPath = (pathOrRouteName: string, routesConfig: RoutesConfig): string => {
   let path = pathOrRouteName;
 
   // Verificamos si es un nombre de ruta en la configuración
@@ -92,7 +91,7 @@ export const reloadRouteElement = (
  * @param routesConfig - Configuración de rutas opcional (por defecto se usa la configuración estándar)
  * @returns Objeto con métodos y estado para gestionar las rutas
  */
-export const useRouter = (routesConfig: RoutesComponentConfig = routesConfiguration) => {
+export const useRouter = (routesConfig: RoutesConfig = routesConfiguration) => {
   const [currentRoute, setCurrentRoute] = useAtom(currentRouteAtom);
   const [, setRoutesConfig] = useAtom(routesConfigAtom);
 

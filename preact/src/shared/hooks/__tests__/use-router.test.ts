@@ -1,5 +1,5 @@
-import { clearComponentCache, navigateTo } from '@/shared';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { clearComponentCache, navigateTo, type RoutesConfig } from '@/shared';
 import { checkIsRouteActive, getPathFromRouteNameOrPath, isVtexRoute, reloadRouteElement } from '../use-router';
 
 // Mock de las dependencias
@@ -32,11 +32,11 @@ describe('Funciones de utilidad de Router', () => {
   });
 
   describe('getPathFromRouteNameOrPath', () => {
-    const routesConfig = {
+    const routesConfig: RoutesConfig = {
       cart: { elements: [] },
       shipping: { elements: [] },
       profile: { elements: [] },
-      defaultElements: [],
+      genericElements: [],
     };
 
     it('debe convertir un nombre de ruta VTEX a su path correspondiente', () => {

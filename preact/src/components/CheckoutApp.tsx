@@ -3,11 +3,11 @@ import { useEffect } from 'preact/hooks';
 import { routesConfiguration } from '@/routes';
 import { orderFormAtom, useRouter } from '@/shared';
 
-// Componente principal que inicializa el sistema
+// Main component that initializes the system
 export const CheckoutApp = ({ orderForm }: { orderForm: VtexOrderForm | null }) => {
   const [, setOrderForm] = useAtom(orderFormAtom);
 
-  // Inicializamos el router con la configuración por defecto
+  // Initialize the router with default configuration
   useRouter(routesConfiguration);
 
   const updateOrderForm = (newOrderForm: VtexOrderForm) => {
@@ -23,7 +23,7 @@ export const CheckoutApp = ({ orderForm }: { orderForm: VtexOrderForm | null }) 
         updateOrderForm(updatedOrderForm as VtexOrderForm);
       }
     });
-  }, [orderForm, setOrderForm, updateOrderForm]);
+  }, []);
 
   return null;
 };

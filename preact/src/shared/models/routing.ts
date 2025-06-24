@@ -19,15 +19,6 @@ export interface RoutesMap {
   [key: string]: RouteComponentConfig;
 }
 
-export interface RoutesComponentConfig {
-  cart?: RouteComponentConfig;
-  shipping?: RouteComponentConfig;
-  payment?: RouteComponentConfig;
-  email?: RouteComponentConfig;
-  profile?: RouteComponentConfig;
-  genericElements?: RouteElement[]; // Elements that render on all routes
-}
-
 // Definition of a route with a path and name, extending RouteComponentConfig
 export interface Route extends RouteComponentConfig {
   path: string;
@@ -41,5 +32,5 @@ export interface RoutesConfig {
   payment?: RouteComponentConfig;
   email?: RouteComponentConfig;
   profile?: RouteComponentConfig;
-  defaultElements?: RouteElement[];
+  genericElements?: RouteElement[];
 }
